@@ -1,0 +1,196 @@
+/* Base */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientFlow 22s ease infinite;
+  color: white;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Login page */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background: rgba(30, 30, 60, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.title {
+  font-family: 'Titan One', cursive;
+  font-size: 3.8rem;
+  color: #ffdd99;
+  text-shadow: 0 0 30px rgba(255,210,120,0.7);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.btn-login {
+  background: linear-gradient(90deg, #ffaa4e, #ffdd99);
+  border: none;
+  font-weight: bold;
+  color: #1a1a2e;
+  transition: all 0.3s;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,180,80,0.5);
+}
+
+.error-message {
+  color: #ff9999;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Carousel */
+.app-title {
+  font-family: 'Titan One', cursive;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  color: #ffdd99;
+  text-shadow: 0 0 40px rgba(255,209,102,0.7);
+  margin: 2.5rem 0 3rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#weatherCarousel {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  height: 70vh;
+  min-height: 480px;
+}
+
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 12px 45px rgba(0,0,0,0.6);
+}
+
+.weather-bg {
+  position: absolute;
+  filter: contrast(1.15) brightness(1.05);
+  image-rendering: pixelated;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background: rgba(10,10,45,0.62);
+  backdrop-filter: blur(0px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.city-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: #ffdd99;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 4px 15px #000;
+}
+
+.country {
+  font-size: 1.7rem;
+  color: #c3daff;
+  margin-bottom: 2rem;
+}
+
+.info-row {
+  font-size: 2rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 500px;
+}
+
+.info-row .emoji {
+  font-size: 2.6rem;
+  min-width: 55px;
+}
+
+/* Arrows */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: 0.9;
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 4.5rem !important;
+  height: 4.5rem !important;
+  background-color: rgba(0,0,0,0.5) !important;
+  border-radius: 50% !important;
+  background-size: 55% !important;
+  filter: drop-shadow(0 0 8px #000);
+}
+
+/* Indicators */
+.carousel-indicators button {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  background-color: rgba(255,255,255,0.55) !important;
+  border: 2px solid white !important;
+  margin: 0 10px !important;
+}
+
+.carousel-indicators .active {
+  background-color: #ffdd99 !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  #weatherCarousel { height: 60vh; min-height: 420px; }
+  .app-title { font-size: 4rem; }
+  .city-title { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .info-row { font-size: 1.3rem; }
+  .info-row .emoji { font-size: 2.2rem; }
+}
