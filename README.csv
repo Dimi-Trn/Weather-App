@@ -1,0 +1,13 @@
+Istall all libraries using:
+
+- npm i
+
+- cd over to the main directory
+
+- run nodemon js file name (or npm install & npm start)
+
+- run it on local host 3000 (type http://localhost:3000/ in browser)
+
+
+PS: App is now live at 
+https://weather-app-y0y4.onrender.com/
